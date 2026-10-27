@@ -7,30 +7,8 @@ export function initialFX() {
   getSmoother()?.paused(false);
   document.getElementsByTagName("main")[0]?.classList.add("main-active");
 
-  const reducedMotion =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reducedMotion) {
-    // Reveal everything immediately without animations.
-    gsap.set("body", { clearProps: "backgroundColor" });
-    gsap.set(
-      [
-        ".landing-info h3",
-        ".landing-intro h2",
-        ".landing-intro h1",
-        ".landing-h2-info",
-        ".landing-info-h2",
-        ".header",
-        ".icons-section",
-        ".nav-fade",
-      ],
-      { opacity: 1, y: 0, filter: "blur(0px)" }
-    );
-    // No rotating text without animation: show only the first word so
-    // "Developer" and "Engineer" are not drawn on top of each other.
-    gsap.set([".landing-h2-info-1", ".landing-h2-2"], { opacity: 0 });
-    return;
-  }
+  // The landing text rotation always runs, even if the OS has animations
+  // turned off, because it is the main feature of the hero section.
   // Fade to the active theme background, then drop the inline style so the
   // theme toggle can restyle the body afterwards.
   gsap.to("body", {
