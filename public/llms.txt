@@ -1,0 +1,24 @@
+# Shoaib Ahmed
+
+> Personal portfolio of Shoaib Ahmed (Soomro): IT Infrastructure Engineer at Asico Real Estate LLC (Dubai, remote) and full-stack developer working in IT and web development since 2019. Based in Sindh, Pakistan; open to remote work and relocation.
+
+## Pages
+- [Portfolio](https://techx.rf.gd/): single-page interactive 3D portfolio (About, What I Do, Career, How I work, Education, Work, Tech Stack, Contact)
+- [Résumé (PDF)](https://techx.rf.gd/resume/Shoaib_Ahmed.pdf): full CV
+- [Privacy Policy](https://techx.rf.gd/privacy)
+- [Terms of Use](https://techx.rf.gd/terms)
+- [Disclaimer](https://techx.rf.gd/disclaimer)
+
+## Profile
+- Current role: IT Infrastructure Engineer, Asico Real Estate LLC, Dubai (remote), since Oct 2024
+- Previous: Freelance Web Developer, offline (Mar to Sep 2024); Web Developer, Pak Affairs (2023 to 2024); Remote Monitoring & Control Specialist, ACT Group wind power plant (2020 to 2022); Intern, FIA NR3C Cyber Crime Wing (2019)
+- Education: BS Computer Science, University of Sindh
+- Skills: JavaScript/TypeScript, React, Next.js, Node.js, Express, Python, MySQL, Google Cloud (Compute Engine, Load Balancing), Linux, CI/CD, PM2, Microsoft 365, Socket.IO, WhatsApp APIs, OpenAI/Gemini integrations, Three.js, GSAP
+
+## Links
+- GitHub: https://github.com/devshahzaib315
+- LinkedIn: https://www.linkedin.com/company/devora-hub
+- Contact: btw.jutt.9@gmail.com
+
+## Optional
+- [Sitemap](https://techx.rf.gd/sitemap.xml)

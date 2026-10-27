@@ -1,0 +1,147 @@
+.header {
+  display: flex;
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  justify-content: space-between;
+  padding: 20px 0px;
+  margin-bottom: -100px;
+  box-sizing: border-box;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: 9999;
+}
+
+.header ul {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  column-gap: 40px;
+  row-gap: 8px;
+  align-items: end;
+}
+
+.header ul li {
+  margin-left: 0px;
+  letter-spacing: 1px;
+  color: var(--fgMute);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navbar-connect {
+  position: absolute;
+  display: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.navbar-title {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.brand-logo {
+  position: fixed;
+  top: 20px;
+  left: calc((100% - var(--cWidth)) / 2);
+  z-index: 9999;
+  display: flex;
+  color: #fff;
+  /* White + difference = always the inverse of whatever is behind it, in both themes. */
+  mix-blend-mode: difference;
+}
+
+.navbar-logo {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+.header nav {
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 500px) {
+  .header {
+    padding: 20px 0px;
+  }
+
+  .header ul {
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .header ul li {
+    color: var(--fg);
+  }
+
+  .navbar-title {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .navbar-connect {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .header {
+    padding: 35px 0px;
+  }
+
+  .brand-logo {
+    top: 35px;
+  }
+
+  .header ul {
+    column-gap: 80px;
+    font-size: 16px;
+  }
+
+  .navbar-connect {
+    font-size: 16px;
+  }
+
+  .navbar-title {
+    font-size: 18px;
+  }
+}
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  font-size: 18px;
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--lineStrong);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--accentColor);
+  border-color: var(--accentColor);
+  transform: rotate(18deg);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accentColor);
+  outline-offset: 3px;
+}

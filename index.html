@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      // Apply the saved (or OS) theme before first paint to avoid a flash.
+      (function () {
+        var t;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+    <title>Shoaib Ahmed | IT Infrastructure Engineer &amp; Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Shoaib Ahmed, IT Infrastructure Engineer at Asico Real Estate (Dubai) and full-stack developer. Works with React, Node.js, Python, Linux and Google Cloud." />
+    <meta name="keywords" content="Shoaib Ahmed, IT Infrastructure Engineer, Full-Stack Developer, React, Node.js, Python, Google Cloud, Linux, Portfolio, Pakistan, Dubai" />
+    <meta name="author" content="Shoaib Ahmed" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b080c" />
+    <link rel="canonical" href="https://techx.rf.gd/" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fonts: Bricolage Grotesque (headings), Plus Jakarta Sans (body), JetBrains Mono (labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=JetBrains+Mono:wght@300..700&family=Plus+Jakarta+Sans:wght@200..800&display=swap"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Shoaib Ahmed" />
+    <meta property="og:url" content="https://techx.rf.gd/" />
+    <meta property="og:title" content="Shoaib Ahmed | IT Infrastructure Engineer &amp; Full-Stack Developer" />
+    <meta property="og:description" content="Interactive 3D portfolio: IT infrastructure, cloud and full-stack web development (React, Node.js, Python)." />
+    <meta property="og:image" content="https://techx.rf.gd/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Shoaib Ahmed | IT Infrastructure Engineer and Full-Stack Developer" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shoaib Ahmed | IT Infrastructure Engineer &amp; Full-Stack Developer" />
+    <meta name="twitter:description" content="Interactive 3D portfolio: IT infrastructure, cloud and full-stack web development." />
+    <meta name="twitter:image" content="https://techx.rf.gd/og-image.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://techx.rf.gd/#website",
+            "url": "https://techx.rf.gd/",
+            "name": "Shoaib Ahmed | Portfolio",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://techx.rf.gd/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://techx.rf.gd/#person",
+            "name": "Shoaib Ahmed",
+            "alternateName": "Shoaib Ahmed Soomro",
+            "url": "https://techx.rf.gd/",
+            "image": "https://techx.rf.gd/og-image.png",
+            "jobTitle": "IT Infrastructure Engineer",
+            "worksFor": { "@type": "Organization", "name": "Asico Real Estate LLC", "address": { "@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE" } },
+            "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Sindh" },
+            "email": "mailto:btw.jutt.9@gmail.com",
+            "address": { "@type": "PostalAddress", "addressRegion": "Sindh", "addressCountry": "PK" },
+            "sameAs": [
+              "https://github.com/devshahzaib315",
+              "https://www.linkedin.com/company/devora-hub",
+              "https://t.me/devshahzaib315",
+              "https://www.facebook.com/share/1JReNeiJyX"
+            ],
+            "knowsAbout": ["IT infrastructure", "Linux", "Google Cloud", "Microsoft 365", "React", "Node.js", "TypeScript", "Python", "Three.js", "GSAP"]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="color: #eae5ec; font-family: sans-serif; padding: 2rem">
+        Shoaib Ahmed | IT Infrastructure Engineer &amp; Full-Stack Developer. This portfolio needs JavaScript for its 3D
+        scene. Email: btw.jutt.9@gmail.com · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a>
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

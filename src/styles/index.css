@@ -1,0 +1,231 @@
+*,
+*::before,
+*::after {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-head);
+  letter-spacing: -0.01em;
+}
+
+h5,
+h6,
+.what-tags,
+.navbar-connect,
+.career-info-box h5,
+.contact-box h4 {
+  font-family: var(--font-mono);
+}
+
+/* Registered custom property so the hue can be interpolated by CSS too. */
+@property --accentHue {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 270;
+}
+
+:root {
+  --font-head: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-body);
+
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  color: var(--fg);
+  background-color: var(--backgroundColor);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+
+  /* RGB cycle: --accentHue is rewritten every frame by rgbCycle.ts.
+     Everything below re-resolves automatically with each update. */
+  --accentHue: 270;
+  --accentColor: hsl(var(--accentHue), 80%, 75%);
+  --accentLight: hsl(var(--accentHue), 95%, 82%);
+  --accentMid: hsl(var(--accentHue), 95%, 70%);
+  --accentVivid: hsl(var(--accentHue), 100%, 60%);
+  --accentDeep: hsl(var(--accentHue), 100%, 50%);
+  --accentGlow: hsla(var(--accentHue), 100%, 50%, 0.6);
+  --accentGlowSoft: hsla(var(--accentHue), 100%, 50%, 0.65);
+
+  /* Semantic theme tokens: dark is the default, light overrides below. */
+  --backgroundColor: #0b080c;
+  --bgDeep: #000;
+  --fg: #eae5ec;
+  --fgStrong: #fff;
+  --fgMute: #adacac;
+  --line: #363636;
+  --lineStrong: rgba(255, 255, 255, 0.3);
+  --surface: rgba(255, 255, 255, 0.12);
+  --glow: rgba(255, 255, 255, 0.5);
+  color-scheme: dark;
+  --vh: 100vh;
+  --vh: 100svh;
+}
+
+/* Light theme: same tokens, re-mapped. Accents get darker for contrast. */
+:root[data-theme="light"] {
+  --backgroundColor: #f6f3f8;
+  --bgDeep: #ebe6f0;
+  --fg: #1a1420;
+  --fgStrong: #0b080c;
+  --fgMute: #5b5563;
+  --line: #d3cbdb;
+  --lineStrong: rgba(26, 20, 32, 0.28);
+  --surface: rgba(26, 20, 32, 0.07);
+  --glow: rgba(26, 20, 32, 0.25);
+  --accentColor: hsl(var(--accentHue), 75%, 38%);
+  --accentLight: hsl(var(--accentHue), 80%, 45%);
+  --accentMid: hsl(var(--accentHue), 85%, 50%);
+  --accentVivid: hsl(var(--accentHue), 90%, 45%);
+  --accentDeep: hsl(var(--accentHue), 100%, 40%);
+  color-scheme: light;
+}
+
+body {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--accentColor);
+}
+
+main {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.main-active {
+  opacity: 0;
+  animation: fadeIn 1s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  margin: 0;
+  height: auto;
+  background-color: var(--backgroundColor);
+  flex-grow: 1;
+  --cWidth: calc(100% - 30px);
+  --cMaxWidth: 1920px;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.main-body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.container-main {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.container1 {
+  width: var(--cWidth);
+  height: var(--vh);
+  margin: auto;
+  position: relative;
+}
+
+.split-line {
+  overflow: hidden;
+}
+
+.split-h2 {
+  overflow: hidden;
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.techstack {
+  width: 100%;
+  position: relative;
+  height: var(--vh);
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: -100px;
+  z-index: 20;
+}
+
+.techstack h2 {
+  font-size: 80px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 120px;
+  left: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    --cWidth: 94%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .techstack {
+    height: 60vh;
+    min-height: 400px;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  .techstack h2 {
+    font-size: 50px;
+    top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .techstack {
+    height: 50vh;
+    min-height: 350px;
+    margin-top: 20px;
+  }
+
+  .techstack h2 {
+    font-size: 35px;
+    top: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .techstack {
+    height: 45vh;
+    min-height: 300px;
+  }
+
+  .techstack h2 {
+    font-size: 28px;
+    top: 10px;
+  }
+}
