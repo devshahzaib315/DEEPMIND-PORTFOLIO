@@ -2,8 +2,12 @@ import { PropsWithChildren } from "react";
 import "../../styles/Landing.css";
 
 // Edit these to change the big rotating word (it swaps every ~5 seconds).
-const WORD_1 = "Developer";
-const WORD_2 = "Designer";
+const WORD_1 = "Designer";
+const WORD_2 = "Engineer";
+const WORD_3 = "Coder";
+const WORD_4 = "Front-End";
+const WORD_5 = "UI/UX Enthusiast";
+const WORD_2 = "Developer";
 
 const Landing = ({ children }: PropsWithChildren) => {
   return (
