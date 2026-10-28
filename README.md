@@ -322,6 +322,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - GitHub: [github.com/devshahzaib315](https://github.com/devshahzaib315)
 - Instagram: [t.me/devshahzaib315](https://t.me/devshahzaib315)
 - Facebook: [facebook.com/share/1JReNeiJyX](https://www.facebook.com/share/1JReNeiJyX)
+-whatsapp:[wa.me/923225083527](wa.me/923225083527)
 
 ---
 
