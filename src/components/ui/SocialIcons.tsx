@@ -116,7 +116,7 @@ const SocialIcons = () => {
       <a
         className="resume-button"
         href="/resume/Shoaib_Ahmed.pdf"
-        download="Shoaib_Ahmed_Resume.pdf"
+        download="shahzaib_Ahmed_Resume.pdf"
         aria-label="Download résumé as PDF"
       >
         <HoverLinks text="RESUME" />
