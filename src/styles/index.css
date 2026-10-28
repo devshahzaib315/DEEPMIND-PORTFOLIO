@@ -229,3 +229,12 @@ body {
     top: 10px;
   }
 }
+.hero-photo {
+  display: block;
+  width: min(340px, 85vw);
+  height: auto;
+  margin: 0 auto;
+  mix-blend-mode: lighten;
+  -webkit-mask-image: linear-gradient(to bottom, #000 85%, transparent);
+  mask-image: linear-gradient(to bottom, #000 85%, transparent);
+}
