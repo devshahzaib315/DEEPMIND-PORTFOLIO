@@ -6,8 +6,8 @@
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)](https://gsap.com/)
 
-🔗 **Repository:** [github.com/devshahzaib315/Shoaib-Ahmed-3D-Portfolio](https://github.com/devshahzaib315/darksoul-portfolio)
-
+🔗 **Repository:** 
+[https://github.com/devshahzaib315/DEEPMIND-PORTFOLIO]
 A high-performance, interactive portfolio website featuring 3D character animations, smooth scroll effects, and modern web technologies. Built with React, TypeScript, Three.js, and GSAP.
 
 ![Portfolio Preview](public/images/placeholder.webp)
