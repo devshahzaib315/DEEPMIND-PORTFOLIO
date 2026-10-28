@@ -37,11 +37,15 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <Cursor />
       <Navbar />
       <SocialIcons />
+
+      {/* 3D model sirf desktop pe */}
       {isDesktopView && children}
+
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="container-main">
-            <Landing>{!isDesktopView && children}</Landing>
+            {/* Mobile pe 3D bilkul nahi */}
+            <Landing>{null}</Landing>
             <About />
             <WhatIDo />
             <Career />
