@@ -1,4 +1,4 @@
-# Shoaib Ahmed - 3D Portfolio Website
+# Shahzaib Ahmed - 3D Portfolio Website
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
@@ -207,10 +207,10 @@ graph TD
 
 ```bash
 # Clone the repository
-git clone https://github.com/devshahzaib315/darksoul-portfolio.git
+git clone https://github.com/devshahzaib315/DEEPMIND-PORTFOLIO.git
 
 # Navigate to project directory
-cd Shoaib-Ahmed-3D-Portfolio
+cd Shahzaib-Ahmed-3D-Portfolio
 
 # Install dependencies
 npm install
@@ -241,7 +241,7 @@ npm run dev
 - Environment HDR for realistic lighting
 
 ### Resume (`public/resume/`)
-- `Shoaib_Ahmed.pdf` - Downloadable resume
+- `shahzaib_Ahmed.pdf` - Downloadable resume
 
 ---
 
@@ -315,7 +315,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-**Shoaib Ahmed**
+**SHAHZAIB AHMED**
 
 - Email: [btw.jutt.9@gmail.com](mailto:btw.jutt.9@gmail.com)
 - LinkedIn: [linkedin.com/company/devora-hub](https://www.linkedin.com/company/devora-hub)
