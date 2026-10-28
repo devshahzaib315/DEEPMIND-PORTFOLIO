@@ -16,7 +16,7 @@ const Contact = () => {
               </a>
             </p>
             <h4>Location</h4>
-            <p>Sindh, Pakistan. Open to remote work or relocation.</p>
+            <p>Lahore,Pakistan.</p>
           </div>
           <div className="contact-box">
             <h4>Social</h4>
