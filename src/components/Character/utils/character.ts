@@ -18,15 +18,16 @@ const setCharacter = (
         "/models/character.glb",
         async (gltf) => {
           const character = gltf.scene;
-          
-// Mobile pe character bada aur sahi position pe
-if (window.innerWidth <= 1024) {
-  character.scale.set(1.35, 1.35, 1.35);
-  character.position.set(0, -1.2, 0);
-} else {
-  character.scale.set(1, 1, 1);
-  character.position.set(0, 0, 0);
-}
+
+          // Mobile pe character bada aur sahi position pe
+          if (window.innerWidth <= 1024) {
+            character.scale.set(1.5, 1.5, 1.5);
+            character.position.set(0, -1.8, 0);
+          } else {
+            character.scale.set(1, 1, 1);
+            character.position.set(0, 0, 0);
+          }
+
           // compileAsync is an optional perf optimization. It throws on some
           // material configurations in three@0.168; swallow and continue so we
           // still resolve the GLTF promise and the loader can finish.
@@ -44,6 +45,7 @@ if (window.innerWidth <= 1024) {
               mesh.frustumCulled = true;
             }
           });
+
           resolve(gltf);
 
           try {
