@@ -247,5 +247,3 @@ body {
     linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
   mask-composite: intersect;
 }
-  mask-image: linear-gradient(to bottom, #000 85%, transparent);
-}
