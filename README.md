@@ -296,7 +296,7 @@ npm run dev
 
 **Icons & branding:** the logo is an "S" inside curly braces, a developer and server-rack motif (`public/favicon.svg`, concepts in `logos/`). Derived files: `favicon.ico`, `favicon-16/32.png`, `apple-touch-icon.png`, `icon-192/512.png`, `icon-maskable-512.png`, `og-image.png` (1200×630). The navbar and loader use the inline `Logo.tsx` (currentColor); the navbar copy uses `mix-blend-mode: difference` so it contrasts with any background and theme. Regenerate the rasters if the logo changes.
 
-**SEO checklist** (domain `https://techx.rf.gd`; `www.` redirects to it via `vercel.json`)
+**SEO checklist** (domain `https://deepmind-web.vercel.app`; `www.` redirects to it via `vercel.json`)
 - `index.html`: title, description, canonical, Open Graph/Twitter, JSON-LD (`WebSite` + `Person`)
 - `public/robots.txt`, `public/sitemap.xml`, `public/llms.txt`, `public/site.webmanifest`
 - When the domain or job title changes, update all of the above plus `public/*.html`.
