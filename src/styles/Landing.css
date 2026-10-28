@@ -347,33 +347,3 @@ h2.landing-info-h2 {
   }
 }
 
-/* Mobile 3D character visibility fix */
-@media screen and (max-width: 767px) {
-  .character-model {
-    display: block !important;
-    position: absolute;
-    width: 100%;
-    height: 65vh;
-    max-height: none;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    z-index: 1;
-    overflow: visible;
-    pointer-events: none;
-  }
-
-  .character-model canvas {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    position: relative;
-    z-index: 2;
-  }
-
-  .character-model::before,
-  .character-model::after {
-    pointer-events: none;
-  }
-}
-
