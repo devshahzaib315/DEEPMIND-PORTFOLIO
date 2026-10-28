@@ -229,6 +229,7 @@ body {
     top: 10px;
   }
 }
+bottom, #000 85%, transparent);
 .hero-photo {
   position: absolute;
   top: 50%;
@@ -238,7 +239,14 @@ body {
   height: auto;
   z-index: 1;
   pointer-events: none;
-  mix-blend-mode: lighten;
-  -webkit-mask-image: linear-gradient(to bottom, #000 85%, transparent);
+  -webkit-mask-image:
+    linear-gradient(to bottom, #000 80%, transparent),
+    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, #000 80%, transparent),
+    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-composite: intersect;
+}
   mask-image: linear-gradient(to bottom, #000 85%, transparent);
 }
