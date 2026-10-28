@@ -49,7 +49,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
               {!isDesktopView && (
                 <img
                   className="hero-photo"
-                  src="/shahzaib.jpeg"
+                  src="/shahzaib.webp"
                   alt="Shahzaib Ahmed"
                   width="600"
                   height="704"
