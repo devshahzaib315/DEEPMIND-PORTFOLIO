@@ -45,7 +45,18 @@ const MainContainer = ({ children }: PropsWithChildren) => {
         <div id="smooth-content">
           <div className="container-main">
             {/* Mobile pe 3D bilkul nahi */}
-            <Landing>{null}</Landing>
+            <Landing>
+              {!isDesktopView && (
+                <img
+                  className="hero-photo"
+                  src="/shahzaib.jpeg"
+                  alt="Shahzaib Ahmed"
+                  width="600"
+                  height="704"
+                  fetchPriority="high"
+                />
+              )}
+            </Landing>
             <About />
             <WhatIDo />
             <Career />
