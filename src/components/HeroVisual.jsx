@@ -31,7 +31,7 @@ export default function HeroVisual() {
   return (
     <img
       className="hero-photo"
-      src="/shahzaib.webp"
+      src="/shahzaib.jpeg"
       alt="Shahzaib Ahmed"
       width="600"
       height="704"
