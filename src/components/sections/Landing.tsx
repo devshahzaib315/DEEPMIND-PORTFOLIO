@@ -1,4 +1,3 @@
-
 import { PropsWithChildren } from "react";
 import "../../styles/Landing.css";
 
@@ -38,10 +37,10 @@ const Landing = ({ children }: PropsWithChildren) => {
               <div className="landing-h2-info-1">{WORDS[0]}</div>
             </h2>
           </div>
+
+          {children}
         </div>
       </div>
-
-      {children}
     </>
   );
 };
