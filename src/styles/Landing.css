@@ -348,29 +348,16 @@ h2.landing-info-h2 {
 }
 
 /* Mobile 3D character visibility fix */
-@media screen and (max-width: 1024px) {
-  .character-container {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    height: 100svh;
-    z-index: 1;
-    pointer-events: none;
-  }
-
+@media screen and (max-width: 767px) {
   .character-model {
     display: block !important;
-    position: fixed !important;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    position: absolute;
     width: 100%;
-    height: 100vh;
-    height: 100svh;
+    height: 65vh;
     max-height: none;
-    bottom: auto;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
     z-index: 1;
     overflow: visible;
     pointer-events: none;
@@ -386,11 +373,7 @@ h2.landing-info-h2 {
 
   .character-model::before,
   .character-model::after {
-    display: none !important;
-  }
-
-  .landing-intro,
-  .landing-info {
-    z-index: 10 !important;
+    pointer-events: none;
   }
 }
+
