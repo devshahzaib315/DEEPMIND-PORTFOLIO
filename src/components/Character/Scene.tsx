@@ -23,8 +23,19 @@ const Scene = () => {
     const container = canvasDiv.current;
     if (!container) return;
 
+    const isMobile = window.innerWidth <= 1024;
+
+    // Mobile pe height force set karo
+    if (isMobile) {
+      container.style.height = "65vh";
+      container.style.minHeight = "420px";
+    }
+
     const rect = container.getBoundingClientRect();
-    const aspect = rect.width / rect.height;
+    const width = rect.width || window.innerWidth;
+    const height =
+      rect.height || (isMobile ? window.innerHeight * 0.65 : window.innerHeight);
+    const aspect = width / height;
     const scene = sceneRef.current;
 
     const renderer = new THREE.WebGLRenderer({
@@ -32,34 +43,36 @@ const Scene = () => {
       antialias: true,
       powerPreference: "high-performance",
     });
-    renderer.setSize(rect.width, rect.height);
-    // Cap DPR: 3x phones would render 9x the pixels for no visible gain.
+    renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1;
     container.appendChild(renderer.domElement);
+
     const onContextLost = (e: Event) => e.preventDefault();
-    const onContextRestored = () => renderer.setSize(container.clientWidth, container.clientHeight);
+    const onContextRestored = () =>
+      renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.domElement.addEventListener("webglcontextlost", onContextLost);
-    renderer.domElement.addEventListener("webglcontextrestored", onContextRestored);
+    renderer.domElement.addEventListener(
+      "webglcontextrestored",
+      onContextRestored
+    );
 
-const isMobile = window.innerWidth <= 1024;
+    const camera = new THREE.PerspectiveCamera(
+      isMobile ? 28 : 14.5,
+      aspect,
+      0.1,
+      1000
+    );
 
-const camera = new THREE.PerspectiveCamera(
-  isMobile ? 22 : 14.5,
-  aspect,
-  0.1,
-  1000
-);
-
-if (isMobile) {
-  camera.position.set(0, 11.5, 18);
-  camera.zoom = 0.95;
-} else {
-  camera.position.set(0, 13.1, 24.7);
-  camera.zoom = 1.1;
-}
-camera.updateProjectionMatrix();
+    if (isMobile) {
+      camera.position.set(0, 10.5, 14);
+      camera.zoom = 0.9;
+    } else {
+      camera.position.set(0, 13.1, 24.7);
+      camera.zoom = 1.1;
+    }
+    camera.updateProjectionMatrix();
 
     let headBone: THREE.Object3D | null = null;
     let screenLight: THREE.Mesh | null = null;
@@ -115,7 +128,6 @@ camera.updateProjectionMatrix();
       landingDiv.addEventListener("touchend", onTouchEnd);
     }
 
-    // Debounced resize
     let resizeTimer: number | undefined;
     let lastWidth = window.innerWidth;
     const onResize = () => {
@@ -130,7 +142,6 @@ camera.updateProjectionMatrix();
     };
     window.addEventListener("resize", onResize);
 
-    // IntersectionObserver to pause the render loop when offscreen
     let isVisible = true;
     const io = new IntersectionObserver(
       (entries) => {
@@ -163,8 +174,6 @@ camera.updateProjectionMatrix();
         }
       })
       .catch(() => null)
-      // Always finish the progress bar, even if loading or setup failed,
-      // so the user is never stuck at the splash screen.
       .then((animations) => {
         progress.loaded().then(() => {
           setTimeout(
@@ -180,7 +189,7 @@ camera.updateProjectionMatrix();
     let rafId = 0;
     const animate = () => {
       rafId = requestAnimationFrame(animate);
-      if (!isVisible) return; // skip work when offscreen
+      if (!isVisible) return;
       if (headBone) {
         handleHeadRotation(
           headBone,
@@ -192,7 +201,6 @@ camera.updateProjectionMatrix();
         );
         if (screenLight) light.setPointLight(screenLight);
       }
-      // Clamp so a background-tab pause never makes the animation jump.
       const delta = Math.min(clock.getDelta(), 0.1);
       if (mixer) mixer.update(delta);
       renderer.render(scene, camera);
@@ -217,7 +225,6 @@ camera.updateProjectionMatrix();
       }
       if (typeof hoverCleanup === "function") hoverCleanup();
 
-      // Dispose Three.js resources
       scene.traverse((obj) => {
         const mesh = obj as THREE.Mesh;
         if (mesh.isMesh) {
@@ -231,7 +238,10 @@ camera.updateProjectionMatrix();
         }
       });
       renderer.domElement.removeEventListener("webglcontextlost", onContextLost);
-      renderer.domElement.removeEventListener("webglcontextrestored", onContextRestored);
+      renderer.domElement.removeEventListener(
+        "webglcontextrestored",
+        onContextRestored
+      );
       light.dispose();
       scene.clear();
       renderer.dispose();
