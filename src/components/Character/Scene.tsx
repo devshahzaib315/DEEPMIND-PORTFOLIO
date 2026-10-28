@@ -25,16 +25,15 @@ const Scene = () => {
 
     const isMobile = window.innerWidth <= 1024;
 
-    // Mobile pe height force set karo
     if (isMobile) {
-      container.style.height = "65vh";
-      container.style.minHeight = "420px";
+      container.style.height = "100vh";
+      container.style.minHeight = "100svh";
     }
 
     const rect = container.getBoundingClientRect();
     const width = rect.width || window.innerWidth;
     const height =
-      rect.height || (isMobile ? window.innerHeight * 0.65 : window.innerHeight);
+      rect.height || (isMobile ? window.innerHeight : window.innerHeight);
     const aspect = width / height;
     const scene = sceneRef.current;
 
@@ -59,15 +58,16 @@ const Scene = () => {
     );
 
     const camera = new THREE.PerspectiveCamera(
-      isMobile ? 28 : 14.5,
+      isMobile ? 24 : 14.5,
       aspect,
       0.1,
       1000
     );
 
     if (isMobile) {
-      camera.position.set(0, 10.5, 14);
-      camera.zoom = 0.9;
+      // Camera thoda peeche aur upar — pura face + body dikhe
+      camera.position.set(0, 12.8, 22);
+      camera.zoom = 0.82;
     } else {
       camera.position.set(0, 13.1, 24.7);
       camera.zoom = 1.1;
