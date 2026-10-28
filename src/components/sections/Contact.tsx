@@ -59,7 +59,7 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Shoaib Ahmed</span>
+              Designed and Developed <br /> by <span>SHAHZAIB Ahmed</span>
             </h2>
             <h5>
               <MdCopyright /> {new Date().getFullYear()}
